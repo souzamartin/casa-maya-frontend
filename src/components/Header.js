@@ -10,10 +10,7 @@ const Header = ({setActiveCustomer}) => {
         .then(setCustomers)
     },[])
 
-    const handleChange = (e) => {
-        console.log(e.target.id)
-        // e => setActiveCustomer(e.target.key)
-    }
+    const handleChange = (e) => setActiveCustomer(e.target.value)
 
     return (
         <div>
@@ -21,7 +18,7 @@ const Header = ({setActiveCustomer}) => {
             <select name="active-customer" onChange={handleChange}>
                 <option value="" disabled selected hidden>Select Customer</option>
                 {customers.map(customer =>
-                    <option id={customer.id} key={customer.id}>{customer.name}</option>
+                    <option value={customer.id} key={customer.id}>{customer.name}</option>
                 )}
             </select>
             <div>

@@ -17,6 +17,12 @@ function App() {
     .then(setItems)
   }, [])
 
+  useEffect(() => {
+    fetch(`http://localhost:9292/customers/${activeCustomer}`)
+    .then(r => r.json())
+    .then(customerData => console.log(customerData))
+  }, [activeCustomer])
+
   return (
     <div className="App">
       <Header setActiveCustomer={setActiveCustomer} />
