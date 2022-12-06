@@ -9,7 +9,7 @@ import PrevOrders from './components/PrevOrders'
 
 function App() {
   const [items, setItems] = useState([])
-   
+  const [activeCustomer, setActiveCustomer] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:9292/items")
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header setActiveCustomer={setActiveCustomer} />
       <Switch>
         <Route path="/shop">
           <Shop items={items} />
