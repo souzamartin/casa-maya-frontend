@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {NavLink} from "react-router-dom"
 
-const Header = ({setActiveCustomer}) => {
+const Header = ({setActiveCustomerId}) => {
     const [customers, setCustomers] = useState([])
 
     useEffect(() => {
@@ -10,7 +10,7 @@ const Header = ({setActiveCustomer}) => {
         .then(setCustomers)
     },[])
 
-    const handleChange = (e) => setActiveCustomer(e.target.value)
+    const handleChange = (e) => setActiveCustomerId(e.target.value)
 
     return (
         <div>
@@ -45,6 +45,12 @@ const Header = ({setActiveCustomer}) => {
                     activeStyle={{background: "#CCCCFF"}}
                 >
                     Previous Orders
+                </NavLink>
+                <NavLink
+                    to="/account"
+                    activeStyle={{background: "#CCCCFF"}}
+                >
+                    Account Details 
                 </NavLink>
             </div>
         </div>
