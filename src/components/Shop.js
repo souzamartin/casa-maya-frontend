@@ -1,8 +1,10 @@
 import Item from './Item'
 
-const Shop = () => {
+const Shop = ({items}) => {
     return (
-        <Item />
+        items.map(item =>
+            <Item key={item.id} item={item} />
+        )
     )
 }
 
