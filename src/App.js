@@ -36,10 +36,10 @@ function App() {
           <Cart />
         </Route>
         <Route path="/prev_orders">
-          <PrevOrders />
+          <PrevOrders customer={activeCustomer} />
         </Route>
         <Route path="/account">
-          <Customer customer={activeCustomer}/>
+          <Customer customer={activeCustomer} />
         </Route>
         <Route exact path="/">
           <Home />
