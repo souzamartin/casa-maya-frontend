@@ -1,5 +1,12 @@
+import Form from './Form'
+
 const Customer = ({customer}) => {
-    if (!customer) return <h2>Please Log In</h2>
+    if (!customer) return (
+        <div>
+            <h3>Please log in or create an account.</h3>
+            <Form />
+        </div>
+    )
     else return (
         <div>
             <h2>{customer.name}</h2>
