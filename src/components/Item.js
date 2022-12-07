@@ -1,8 +1,4 @@
-const Item = ({item}) => {
-
-    const handleClick = () => {
-        console.log("OINK")
-    }
+const Item = ({item, onAdd}) => {
 
     return (
         <div>
@@ -10,7 +6,7 @@ const Item = ({item}) => {
             <span>${item.price}</span>
             <img src={item.image} />
             <p>{item.description}</p>
-            <button onClick={handleClick}>Add to Cart</button>
+            <button onClick={() => onAdd(item.id)}>Add to Cart</button>
         </div>
     )
 }

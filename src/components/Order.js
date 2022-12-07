@@ -1,9 +1,17 @@
 const Order = ({order, items}) => {
     const filtered = items.filter(item => item.id === order.item_id)
-    console.log(filtered)
+
+    const changeQuantity = () => console.log("OINK")
+
     return(
         <div>
-            <h3>{filtered[0].name}: {order.quantity} bottles</h3>
+            <h3>{filtered[0].name}:
+            {order.complete ?
+                " " + order.quantity
+            :
+                <input type="number" value={order.quantity} onChange={changeQuantity}></input>
+            }   
+            </h3>
         </div> 
     )
 }

@@ -25,15 +25,31 @@ function App() {
     .then(setOrders)
   }, [])
 
+  const onAdd = (itemId) => {
+    fetch("http://localhost:9292/orders", {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        item_id: itemId,
+        quantity: 1,
+        complete: false,
+      })
+    })
+    .then(r => r.json())
+    .then(newOrder => setOrders([...orders, newOrder]))
+  }
+
   return (
     <div className="App">
       <Header />
       <Switch>
         <Route path="/shop">
-          <Shop items={items} />
+          <Shop items={items} onAdd={onAdd} />
         </Route>
         <Route path="/cart">
-          <Cart />
+          <Cart items={items} orders={orders} />
         </Route>
         <Route path="/prev_orders">
           <PrevOrders orders={orders} items={items}/>
