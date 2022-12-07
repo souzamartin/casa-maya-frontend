@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, useHistory} from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
 import Home from './components/Home'
@@ -9,6 +9,7 @@ import PrevOrders from './components/PrevOrders'
 import NewItem from './components/NewItem';
 
 function App() {
+  const history = useHistory()
   const [items, setItems] = useState([])
   const [orders, setOrders] = useState([])
 
@@ -28,6 +29,7 @@ function App() {
     })
     .then(r => r.json())
     .then(newItem => setItems([...items, newItem]))
+    .then(history.push("/shop"))
   }
 
   // Fetch orders

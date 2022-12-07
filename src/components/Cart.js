@@ -1,10 +1,17 @@
 import Order from './Order'
 
 const Cart = ({orders, items, changeQuantity, deleteOrder}) => {
+
+    const pendingOrders = orders.filter(order => order.complete === false)
+
+    const handleClick = () => {
+        console.log("OINK")
+    }
+
     return (
         <div>
             <h2>Cart</h2>
-            {orders.filter(order => order.complete === false).map(order =>
+            {pendingOrders.map(order =>
                 <Order
                     key={order.id}
                     order={order}
@@ -13,6 +20,7 @@ const Cart = ({orders, items, changeQuantity, deleteOrder}) => {
                     deleteOrder={deleteOrder}
                 />
             )}
+            <button onClick={handleClick} >Checkout</button>
         </div>
     )
 }

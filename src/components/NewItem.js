@@ -20,6 +20,7 @@ const NewItem = ({createItem}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         createItem(formData)
+        setFormData(initialFormState)
     }
 
     return (
