@@ -1,13 +1,16 @@
 import Order from './Order'
 
-
-const PrevOrders = ({customer}) => {
-    if (!customer) return <h2>Please Log In</h2>
-    else return (
+const PrevOrders = ({orders, items}) => {
+   
+    return (
         <div>
             <h2>Previous Orders</h2>
-            {customer.orders.map(order => 
-                <Order order={order} key={order.id} />    
+            {orders.filter(order => order.complete === true).map(order =>
+                // let itemId = order.item_id
+                // console.log(itemId)
+                // (items.filter(item => item.id === order.item_id))
+                <Order key={order.id} order={order} items={items} />
+                
             )}
         </div>
     )
