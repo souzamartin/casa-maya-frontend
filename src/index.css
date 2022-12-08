@@ -15,22 +15,28 @@ body {
 
 .header {
   display: flex;
-  flex-direction: column;
-  justify-content: center; 
+  flex-direction: row;
+  /* flex-direction: column; */
+  /* justify-content: center;  */
+  justify-content: left; 
   position: relative;
   align-items: center;
   margin: 50px;
+  border: 1px solid;
 }
 
 .navbar {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-evenly; */
+  justify-content: flex-end;
   gap: 50px;
+  margin: 0% 5% 0% 30%;
+  border: 1px solid;
 }
 
 /* HOME */
 .home {
+  border: 1px solid;
   align-content: center;
   width: 60%;
   margin: auto;
@@ -38,8 +44,17 @@ body {
   
 }
 
+.homeimage {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  
+
+}
+
 /* SHOP */
 .shop {
+  border: 1px solid;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -48,11 +63,20 @@ body {
 }
 
 .item {
+  border: 12px solid;
   margin: 20px; 
+}
+
+.itemimage {
+  display: flex;
+  border: 10px solid;
+  justify-content: center;
+  height: 5px;
 }
 
 /* CART */
 .cart {
+  border: 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +85,7 @@ body {
 
 /* PREVIOUS ORDERS */
 .prevorder {
+  border: 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
