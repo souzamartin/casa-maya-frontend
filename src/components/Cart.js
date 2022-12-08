@@ -32,17 +32,17 @@ const Cart = ({orders, setOrders}) => {
     }
 
     const handleClick = () => {
-        // orders.map(order => {
-        //     fetch(`http://localhost:9292/orders/${order.id}`, {
-        //     method: "PATCH",
-        //     headers: {'content-type': 'application/json'},
-        //     body: JSON.stringify({
-        //         complete: true,
-        //     })
-        //     })
-        //     .then(r => r.json())
-        //     .then(newOrder => setOrders([...orders, newOrder]))
-        // })
+        orders.map(order => {
+            fetch(`http://localhost:9292/orders/${order.id}/checkout`, {
+            method: "PATCH",
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({
+                complete: true,
+            })
+            })
+            .then(r => r.json())
+            .then(setOrders([]))
+        })
     }
 
     if (orders !== []) {
