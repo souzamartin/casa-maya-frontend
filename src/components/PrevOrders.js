@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import Order from './Order'
 
 const PrevOrders = () => {
-   const [prevOrders, setPrevOrders] = useState(null)
+   const [prevOrders, setPrevOrders] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:9292/orders/complete")
@@ -10,12 +10,12 @@ const PrevOrders = () => {
         .then(setPrevOrders)
       }, [])
 
-    if (prevOrders === null) {
+    if (prevOrders !== []) {
         return (
             <div>
                 <h2>Previous Orders</h2>
                 {prevOrders.map(order =>
-                    <Order key={order.id} order={order} item={order.item} />
+                    <Order key={order.id} order={order} />
                 )}
             </div>
         )}

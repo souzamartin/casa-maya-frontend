@@ -47,6 +47,34 @@ function App() {
     .then(newOrder => setOrders([...orders, newOrder]))
   }
 
+    // Fetch pending orders
+    useEffect(() => {
+      fetch("http://localhost:9292/orders/pending")
+      .then(r => r.json())
+      .then(setOrders)
+    }, [])
+
+  // Update order quantity
+  const changeQuantity = (orderId, newQuantity) => {
+      fetch(`http://localhost:9292/orders/${orderId}`, {
+        method: "PATCH",
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({
+          quantity: newQuantity,
+        })
+      })
+      .then(r => r.json())
+      .then(newOrder => setOrders([...orders, newOrder]))
+    }
+
+  // Delete pending order
+  const deleteOrder = (orderId) => {
+  fetch(`http://localhost:9292/orders/${orderId}`, {method: "DELETE"})
+
+      const updatedOrders = orders.filter(order => order.id !== orderId)
+      setOrders(updatedOrders)
+  }
+
   return (
     <div className="App">
       <Header />
@@ -55,7 +83,7 @@ function App() {
           <Shop items={items} onAdd={onAdd} />
         </Route>
         <Route path="/cart">
-          <Cart orders={orders} setOrders={setOrders} />
+          <Cart orders={orders} changeQuantity={changeQuantity} deleteOrder={deleteOrder} />
         </Route>
         <Route path="/prev_orders">
           <PrevOrders />

@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-const Order = ({order, item, changeQuantity, deleteOrder}) => {
+const Order = ({order, changeQuantity, deleteOrder}) => {
     const [visible, setVisible] = useState(true)
 
     const handleChange = (e) => {
@@ -11,10 +11,10 @@ const Order = ({order, item, changeQuantity, deleteOrder}) => {
     return (
         visible ?
         <div>
-            <h3>{item.name}:
+            <h3>{order?.item?.name}:
             {order.complete ?
                 " " + order.quantity
-            :
+                :
                 <>
                     <input
                         type="number"
