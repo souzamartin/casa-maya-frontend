@@ -1,10 +1,48 @@
 import {useEffect} from "react"
 import Order from './Order'
 
-const Cart = ({orders, changeQuantity, deleteOrder}) => {
+const Cart = ({orders, setOrders}) => {
+
+    // Fetch pending orders
+    useEffect(() => {
+        fetch("http://localhost:9292/orders/pending")
+        .then(r => r.json())
+        .then(setOrders)
+    }, [])
+
+    // Update order quantity
+    const changeQuantity = (orderId, newQuantity) => {
+        fetch(`http://localhost:9292/orders/${orderId}`, {
+            method: "PATCH",
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({
+                quantity: newQuantity,
+            })
+        })
+        .then(r => r.json())
+        .then(newOrder => setOrders([...orders, newOrder]))
+    }
+
+    // Delete pending order
+    const deleteOrder = (orderId) => {
+    fetch(`http://localhost:9292/orders/${orderId}`, {method: "DELETE"})
+
+        const updatedOrders = orders.filter(order => order.id !== orderId)
+        setOrders(updatedOrders)
+    }
 
     const handleClick = () => {
-        console.log("OINK")
+        // orders.map(order => {
+        //     fetch(`http://localhost:9292/orders/${order.id}`, {
+        //     method: "PATCH",
+        //     headers: {'content-type': 'application/json'},
+        //     body: JSON.stringify({
+        //         complete: true,
+        //     })
+        //     })
+        //     .then(r => r.json())
+        //     .then(newOrder => setOrders([...orders, newOrder]))
+        // })
     }
 
     if (orders !== []) {
