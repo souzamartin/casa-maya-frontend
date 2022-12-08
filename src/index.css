@@ -1,13 +1,71 @@
 body {
-  margin: 0;
+  margin: 75px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  position: relative;
+  align-items: center;
+  margin: 50px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  gap: 50px;
+}
+
+.shop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item {
+  margin: 20px; 
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 100px;
+}
+
+.prevorder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  position: center;
+}
+
+form input {
+  margin: 5px;
+}
+
+.formcontent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }

@@ -47,7 +47,7 @@ const Cart = ({orders, setOrders}) => {
 
     if (orders !== []) {
     return (
-        <div>
+        <div className='cart'>
             <h2>Cart</h2>
             {orders.map(order =>
                 <Order

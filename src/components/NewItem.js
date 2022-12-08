@@ -24,33 +24,35 @@ const NewItem = ({createItem}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Item Name"
-                name="name"
-                onChange={handleInput}>
+        <div className='formcontent'>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Item Name"
+                    name="name"
+                    onChange={handleInput}>
+                    </input>
+                <input
+                    type="text"
+                    placeholder="Description"
+                    name="description"
+                    onChange={handleInput}>
                 </input>
-            <input
-                type="text"
-                placeholder="Description"
-                name="description"
-                onChange={handleInput}>
-            </input>
-            <input
-                type="number"
-                placeholder="Price"
-                name="price"
-                onChange={handleInput}>
-            </input>
-            <input
-                type="text"
-                placeholder="Image URL"
-                name="image"
-                onChange={handleInput}>
-            </input>
-            <input type="submit" value="Create Item" />
-        </form>
+                <input
+                    type="number"
+                    placeholder="Price"
+                    name="price"
+                    onChange={handleInput}>
+                </input>
+                <input
+                    type="text"
+                    placeholder="Image URL"
+                    name="image"
+                    onChange={handleInput}>
+                </input>
+                <input type="submit" value="Create Item" />
+            </form>
+        </div>
     )
 }
 

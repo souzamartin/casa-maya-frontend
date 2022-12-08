@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 import {Switch, Route, useHistory} from 'react-router-dom'
-import './App.css';
 import Header from './components/Header'
 import Home from './components/Home'
 import Shop from './components/Shop'

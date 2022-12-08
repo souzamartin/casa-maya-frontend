@@ -1,7 +1,7 @@
 const Item = ({item, onAdd}) => {
 
     return (
-        <div>
+        <div className='item'>
             <h3>{item.name}</h3>
             <span>${item.price}</span>
             <img src={item.image} />

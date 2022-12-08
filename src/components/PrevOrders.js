@@ -12,7 +12,7 @@ const PrevOrders = () => {
 
     if (prevOrders !== []) {
         return (
-            <div>
+            <div className='prevorder'>
                 <h2>Previous Orders</h2>
                 {prevOrders.map(order =>
                     <Order key={order.id} order={order} />

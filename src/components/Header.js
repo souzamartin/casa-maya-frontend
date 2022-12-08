@@ -3,9 +3,10 @@ import {NavLink} from "react-router-dom"
 
 const Header = () => {
     return (
-        <div>
+        <div className="header">
             <h1>Casa Maya Tequila</h1>
-            <div>
+            <br/>
+            <div className="navbar">
                 <NavLink
                     exact to="/"
                     activeStyle={{background: "#CCCCFF"}}>
