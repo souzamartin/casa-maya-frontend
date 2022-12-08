@@ -32,13 +32,6 @@ function App() {
     .then(history.push("/shop"))
   }
 
-  // Fetch orders
-  useEffect(() => {
-    fetch("http://localhost:9292/orders")
-    .then(r => r.json())
-    .then(setOrders)
-  }, [])
-
   // Create new order
   const onAdd = (itemId) => {
     fetch("http://localhost:9292/orders", {
@@ -54,27 +47,6 @@ function App() {
     .then(newOrder => setOrders([...orders, newOrder]))
   }
 
-  // Update order quantity
-  const changeQuantity = (orderId, newQuantity) => {
-    fetch(`http://localhost:9292/orders/${orderId}`, {
-      method: "PATCH",
-      headers: {'content-type': 'application/json'},
-      body: JSON.stringify({
-        quantity: newQuantity,
-      })
-    })
-    .then(r => r.json())
-    .then(newOrder => setOrders([...orders, newOrder]))
-  }
-
-  // Delete order
-  const deleteOrder = (orderId) => {
-    fetch(`http://localhost:9292/orders/${orderId}`, {method: "DELETE"})
-
-      const updatedOrders = orders.filter(order => order.id !== orderId)
-      setOrders(updatedOrders)
-  }
-
   return (
     <div className="App">
       <Header />
@@ -83,15 +55,10 @@ function App() {
           <Shop items={items} onAdd={onAdd} />
         </Route>
         <Route path="/cart">
-          <Cart
-            items={items}
-            orders={orders} 
-            changeQuantity={changeQuantity}
-            deleteOrder={deleteOrder}
-          />
+          <Cart orders={orders} setOrders={setOrders} />
         </Route>
         <Route path="/prev_orders">
-          <PrevOrders orders={orders} items={items}/>
+          <PrevOrders />
         </Route>
         <Route path="/new_item">
           <NewItem createItem={createItem} />

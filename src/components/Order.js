@@ -1,19 +1,17 @@
 import {useState} from "react"
 
-const Order = ({order, items, changeQuantity, deleteOrder}) => {
+const Order = ({order, item, changeQuantity, deleteOrder}) => {
     const [visible, setVisible] = useState(true)
-
-    const filtered = items.filter(item => item.id === order.item_id)
 
     const handleChange = (e) => {
         changeQuantity(order.id, e.target.value)
         setVisible(!visible)
     }
 
-    return(
+    return (
         visible ?
         <div>
-            <h3>{filtered[0].name}:
+            <h3>{item.name}:
             {order.complete ?
                 " " + order.quantity
             :
