@@ -8,6 +8,11 @@ body {
   
 }
 
+/* HEADER */
+.logo {
+  max-height: 100px;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -24,6 +29,16 @@ body {
   gap: 50px;
 }
 
+/* HOME */
+.home {
+  align-content: center;
+  width: 60%;
+  margin: auto;
+  /* border: 1px solid; */
+  
+}
+
+/* SHOP */
 .shop {
   display: flex;
   flex-direction: row;
@@ -36,6 +51,7 @@ body {
   margin: 20px; 
 }
 
+/* CART */
 .cart {
   display: flex;
   flex-direction: column;
@@ -43,6 +59,7 @@ body {
   margin: 0px 100px;
 }
 
+/* PREVIOUS ORDERS */
 .prevorder {
   display: flex;
   flex-direction: column;
@@ -50,6 +67,7 @@ body {
   margin: 0px 100px;
 }
 
+/* SECRET ENDPOINT */
 form {
   display: flex;
   flex-direction: column;

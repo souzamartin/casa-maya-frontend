@@ -1,9 +1,11 @@
 // import {useState, useEffect} from 'react'
 import {NavLink} from "react-router-dom"
+import logo from "../images/logo.png"
 
 const Header = () => {
     return (
         <div className="header">
+            <img className="logo" src={logo}/>
             <h1>Casa Maya Tequila</h1>
             <br/>
             <div className="navbar">
