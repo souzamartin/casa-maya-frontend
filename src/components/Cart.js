@@ -44,12 +44,13 @@ const Cart = ({orders, setOrders}) => {
             .then(setOrders([]))
         })
     }
-    let totalCost = 0
-    let totalTest = orders.map(order => ((order.item.price*order.quantity)))
-    totalTest.forEach(element => {console.log(element)})
+
+    // let totalCost = 0
+    // let totalTest = orders.map(order => ((order.item.price*order.quantity)))
+    // totalTest.forEach(element => {totalCost + element})
     
     // console.log(totalCost)
-    // console.log(totalTest) 
+    // console.log(totalTest)
 
     if (orders !== []) {
     return (
@@ -63,8 +64,8 @@ const Cart = ({orders, setOrders}) => {
                     deleteOrder={deleteOrder}
                 />
             )}
-            {totalTest.sum}
             <button className="checkout" onClick={handleClick}>Checkout</button>
+            {/* <div>{totalTest.reduce()}</div> */}
         </div>
     )
     } else {

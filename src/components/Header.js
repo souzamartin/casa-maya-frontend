@@ -16,9 +16,11 @@ const Header = () => {
         display: "inline-block",
         background: "#9acd32", 
         width: "80px",
-        height: "50px",
-        textAlign: "center",
-        color: "white"
+        // height: "50px",
+        // textAlign: "center",
+        padding: "8px",
+        color: "white",
+        borderRadius: "3rem"
     }
 
     return (
