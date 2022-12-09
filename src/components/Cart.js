@@ -57,7 +57,7 @@ const Cart = ({orders, setOrders}) => {
                     deleteOrder={deleteOrder}
                 />
             )}
-            <button onClick={handleClick} >Checkout</button>
+            <button onClick={handleClick}>Checkout</button>
         </div>
     )
     } else {

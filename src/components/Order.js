@@ -10,23 +10,23 @@ const Order = ({order, changeQuantity, deleteOrder}) => {
 
     return (
         visible ?
-        <div>
-            <h3>{order?.item?.name}:
+        <div className="orderdiv">
+            <h3>Casa Maya {order?.item?.name}:</h3>
             {order.complete ?
-                " " + order.quantity
+                " " + order.quantity + "x bottles " + " = " + "$" + order.quantity*order.item.price
                 :
-                <>
+                <div>
                     <input
                         type="number"
                         value={order.quantity}
                         min="1"
-                        onChange={handleChange}
-                    >
+                        onChange={handleChange}>
                     </input>
                     <button onClick={() => deleteOrder(order.id)}>❌</button>
-                </>
+                    <span>${order.item.price}/bottle</span>
+                </div>
             }   
-            </h3>
+            {/* </h3> */}
         </div>
         :
         null
