@@ -40,16 +40,16 @@ const Header = () => {
                     Shop
                 </NavLink>
                 <NavLink
-                    to="/cart"
-                    activeStyle={activeStyle}
-                    style={linkStyles}>
-                    Cart
-                </NavLink>
-                <NavLink
                     to="/prev_orders"
                     activeStyle={activeStyle}
                     style={linkStyles}>
-                    Previous Orders
+                    Orders
+                </NavLink>
+                <NavLink
+                    to="/cart"
+                    activeStyle={activeStyle}
+                    style={linkStyles}>
+                    🛒
                 </NavLink>
             </div>
         </div>
