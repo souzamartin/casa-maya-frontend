@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  font-family: 'Roboto', sans-serif;
 }
 
 /* HEADER */
@@ -87,7 +87,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.7rem 2rem;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 15px;
   text-align: center;
@@ -121,7 +122,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.7rem 2rem;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 15px;
   text-align: center;
@@ -210,6 +212,7 @@ form input {
   margin: 100px 0px 0px 0px;
   align-items: flex-start;
   height: 200px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footerlogo {
@@ -228,5 +231,6 @@ form input {
   flex-direction: column;
   align-content: center;
   align-items:  center;
+  font-family: 'Roboto', sans-serif;
   /* margin: 10px; */
 }
