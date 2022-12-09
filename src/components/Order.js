@@ -23,7 +23,8 @@ const Order = ({order, changeQuantity, deleteOrder}) => {
                         onChange={handleChange}>
                     </input>
                     <button onClick={() => deleteOrder(order.id)}>❌</button>
-                    <span>${order.item.price}/bottle</span>
+                    <span>   ${order.item.price}/bottle</span>
+                    
                 </div>
             }   
             {/* </h3> */}
@@ -34,3 +35,5 @@ const Order = ({order, changeQuantity, deleteOrder}) => {
 }
 
 export default Order
+
+{/* <span> = ${order.item.price*order.quantity} total </span> */}

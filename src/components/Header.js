@@ -4,6 +4,23 @@ import logo from "../images/logo.png"
 
 
 const Header = () => {
+    const linkStyles = {
+        display: "inline-block",
+        width: "50px",
+        textDecoration: "none",
+        color: "black",
+        textAlign: "center"
+    }
+
+    const activeStyle = {
+        display: "inline-block",
+        background: "#9acd32", 
+        width: "80px",
+        height: "50px",
+        textAlign: "center",
+        color: "white"
+    }
+
     return (
         <div className="header">
             <img className="logo" src={logo}/>
@@ -12,22 +29,26 @@ const Header = () => {
             <div className="navbar">
                 <NavLink
                     exact to="/"
-                    activeStyle={{background: "#CCCCFF"}}>
+                    activeStyle={activeStyle}
+                    style={linkStyles}>
                     Home
                 </NavLink>
                 <NavLink
                     to="/shop"
-                    activeStyle={{background: "#CCCCFF"}}>
+                    activeStyle={activeStyle}
+                    style={linkStyles}>
                     Shop
                 </NavLink>
                 <NavLink
                     to="/cart"
-                    activeStyle={{background: "#CCCCFF"}}>
+                    activeStyle={activeStyle}
+                    style={linkStyles}>
                     Cart
                 </NavLink>
                 <NavLink
                     to="/prev_orders"
-                    activeStyle={{background: "#CCCCFF"}}>
+                    activeStyle={activeStyle}
+                    style={linkStyles}>
                     Previous Orders
                 </NavLink>
             </div>
@@ -36,3 +57,5 @@ const Header = () => {
 }
 
 export default Header
+
+// Periwinkle: activeStyle={{background: "#CCCCFF"}}

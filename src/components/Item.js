@@ -6,7 +6,7 @@ const Item = ({item, onAdd}) => {
             <div className='itemimagediv'>
                 <img src={item.image} />
             </div>
-            <span>${item.price}</span>
+            <h4>${item.price}</h4>
             <p>{item.description}</p>
             <button onClick={() => onAdd(item.id)}>Add to Cart</button>
         </div>
