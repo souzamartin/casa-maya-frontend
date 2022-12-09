@@ -82,6 +82,29 @@ body {
   width: auto;
 }
 
+.shop button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  /* color: #fff; */
+  color: dark-gray;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+}
+
+.shop button:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  background-color: #000;
+  color: white;
+}
+
 /* CART */
 .cart {
   border: 1px solid;
@@ -94,7 +117,27 @@ body {
 
 /* Checkout button */
 .checkout {
-  margin: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  /* color: #fff; */
+  color: dark-gray;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  margin: 30px;
+}
+
+.checkout:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  background-color: #000;
+  color: white;
 }
 
 .orderdiv {
