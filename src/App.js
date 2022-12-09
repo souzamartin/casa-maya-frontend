@@ -6,6 +6,7 @@ import Shop from './components/Shop'
 import Cart from './components/Cart'
 import PrevOrders from './components/PrevOrders'
 import NewItem from './components/NewItem';
+import Footer from './components/Footer';
 
 function App() {
   const history = useHistory()
@@ -66,6 +67,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
