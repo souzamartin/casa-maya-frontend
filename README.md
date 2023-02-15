@@ -1,7 +1,7 @@
 # Casa Maya - Front End Repo
 
 ## Description
-A single page application inspired by tequila e-buy websites. A user can add items to cart and "buy." The order will persist in the back end. Admin will have access to adding new items to the shop. 
+A single page application intended to be an e-commerce prototype for Casa Maya Tequila. A user can add items to cart and "buy." The order will persist in the back end. Admin will have access to adding new items to the shop. 
 
 ## Demo
 
