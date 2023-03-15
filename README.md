@@ -3,7 +3,7 @@
 ## Description
 A single page application intended to be an e-commerce prototype for Casa Maya Tequila. A user can add items to cart and "buy." The order will persist in the back end. Admin will have access to adding new items to the shop. 
 
-## Demo
+## Frontend Design
 
 ![Screen Shot 2022-12-09 at 12 40 55](https://user-images.githubusercontent.com/113480086/219111902-bed3cdb6-3513-492d-8afa-40ec76b6ff85.png)
 
